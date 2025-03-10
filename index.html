@@ -7,17 +7,42 @@
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
+	   <script>
+		function countBasePairs(dnaSequence) {
+			let countA = 0, countT = 0, countG = 0, countC = 0;
+				    
+			for (let base of dnaSequence) {
+				if (base === 'A') countA++;
+				else if (base === 'T') countT++;
+				else if (base === 'G') countG++;
+				else if (base === 'C') countC++;
+			}
+				    
+			let total = countA + countT + countG + countC;
+    			let percentA = ((countA / total) * 100).toFixed(2);
+    			let percentT = ((countT / total) * 100).toFixed(2);
+    			let percentG = ((countG / total) * 100).toFixed(2);
+    			let percentC = ((countC / total) * 100).toFixed(2);
+    
+    			return `A count: ${countA} (${percentA}%) C count: ${countC} (${percentC}%) G count: ${countG} (${percentG}%) T count: ${countT} (${percentT}%)`;
+		}
+		</script>
    </head> 
    
    <body> 
 
      	<header class="w3-container w3-flat-carrot">
-		<h1>My Hello World App!</h1>
+		<h1>My JavaScript fundamentals</h1>
 	</header>
 
 	<div class="w3-container"><!-- place main content here and it will show up between header and footer.-->
 		
-		<p>Hello World! Ken Oishi is here.</p>		
+		<p>Uncultured sulfate-reducing bacterium clone GOMGC2B07F DsrA (dsrA) gene base counts:</p>	
+		<p id="results"></p>
+		<Script>
+			var resultText = document.getElementById("result");
+		        resultText.innerHTML = countBasePairs("ACTGGAAGCACGGCGGCATCGTGGGCGTGCTGGGTTATGGTGGAGGCGTCATCGGCCGCTATTGCGACCGGCCGGACCTCTTCCCAGAAGTGGCCCACTTTCACACCATGCGCATCAACCAGCCCTCGAGCAAGTTTTACAATACCGACATCCTGAAAAGACTCCGTGAACTGTGGGAAAGGCGCGGCAGCGGCCTCACCAACATGCATGGTTCAACGGGGGACATCATCCTGCTCGGTACCACCACCAATGAACTGGAGCCCATATTCTATGAATTGACCCACGATTTGAATATGGACCTGGGCGGTTCGGGCTCCAACTTGCGCACACCGAGCTGCTGTCTGGGCAAGGCCCGTTGCGAGTGGTCCTGCCTTGACACTCAGGCCATCACCAACGACATTACCCATGAGTTCCAGGACGAGCCTTATCGACCCGCCTTTCCTTACAAGTTCAAGTTCAAGACCTCCGGCTGCCCCAACGACTGTGTGGCCGCCATTGCCCGGGCCGACTGCTCCATCATCGGCACCTGGCGCGATCAGATCCGCATCGACCAGGAGGCTGTAAAGGCCTACGCTGCCGGGGAACTGGCCCCCAACGGCAATGCCTTCGATACGGGACCAAGTGCTCTGGACATCCAGAAAGAGGTCTGTGACCTGTGCCCCACCCGTTGCATGGAATGGGACGGCAAGACCCTGAAATCTGGGGATGAAGAGTGCAC");
+		</Script>
 
 	</div><!-- /content -->
 	
